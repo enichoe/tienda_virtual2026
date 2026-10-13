@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Administración | NexoTech</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body class="admin-body">
+    <header>
+      <div class="wrap admin-top">
+        <a class="brand" href="./"
+          ><span class="brand-icon">n↗</span>NexoTech <small>ADMIN</small></a
+        >
+        <div>
+          <a href="./" class="btn btn-outline-secondary">Ver tienda ↗</a>
+          <button id="logout" class="btn btn-dark" hidden>Salir</button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap" id="admin-root">
+      <section class="panel login-panel">
+        <span class="eyebrow">ESPACIO DE ADMINISTRACIÓN</span>
+        <h2>Bienvenido de nuevo.</h2>
+        <p class="muted mt-3">Gestiona tu catálogo, pedidos y configuración.</p>
+        <div id="setup-message"></div>
+        <form id="login-form">
+          <label class="field"
+            >Correo electrónico<input
+              name="email"
+              type="email"
+              class="form-control"
+              required
+              autocomplete="username" /></label
+          ><label class="field"
+            >Contraseña<input
+              name="password"
+              type="password"
+              class="form-control"
+              required
+              autocomplete="current-password" /></label
+          ><button class="btn btn-primary w-100 mt-3" id="login-button">
+            Ingresar al panel
+          </button>
+        </form>
+        <p class="admin-help mt-3">
+          Acceso exclusivo para administradores autorizados. El rol se asigna
+          desde Supabase.
+        </p>
+        <a href="downloads/nexotech-peru.zip" class="admin-help"
+          >Descargar código y guía de instalación ↗</a
+        >
+      </section>
+    </main>
+    <dialog id="edit-dialog" aria-label="Editar registro" class="dialog-wide">
+      <button class="close-dialog" aria-label="Cerrar">×</button>
+      <div id="editor"></div>
+    </dialog>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script type="module" src="src/admin.js"></script>
+  </body>
+</html>

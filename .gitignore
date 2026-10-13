@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+node_modules/
+*.zip
+*.tar.gz
+.supabase/
+!dist/downloads/*.zip

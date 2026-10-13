@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NexoTech Perú | Tecnología que va contigo</title>
+    <meta
+      name="description"
+      content="Encuentra laptops, computadoras, componentes y accesorios. Arma tu pedido y coordina por WhatsApp."
+    />
+    <link rel="stylesheet" href="vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap">
+        <span>Tecnología para estudiar, crear y llegar más lejos.</span
+        ><span>Compra fácil. Coordina por WhatsApp ↗</span>
+      </div>
+    </div>
+    <header>
+      <div class="wrap header-main">
+        <a class="brand" href="./"
+          ><span class="brand-icon">n<span>↗</span></span
+          ><span data-brand>NexoTech</span><small>PERÚ</small></a
+        >
+        <form id="search-form" class="search">
+          <span>⌕</span
+          ><input
+            id="search"
+            aria-label="Buscar productos"
+            placeholder="¿Qué estás buscando hoy?"
+          /><kbd>Buscar</kbd>
+        </form>
+        <button class="cart-button" id="open-cart" aria-label="Abrir carrito">
+          ▱ <span class="cart-label">Mi carrito</span><b id="cart-count">0</b>
+        </button>
+      </div>
+      <nav class="wrap nav-main">
+        <a href="#catalog">☷ &nbsp; Todos los productos</a
+        ><a href="#catalog" data-category="Laptops">Laptops</a
+        ><a href="#catalog" data-category="Computadoras">Computadoras</a
+        ><a href="#catalog" data-category="Periféricos">Accesorios</a
+        ><a href="#catalog" id="offers-link"
+          >Ofertas <span class="tiny-tag">HOT</span></a
+        ><a class="admin-link" href="admin.html">Administración ↗</a>
+      </nav>
+    </header>
+    <main>
+      <section class="wrap hero">
+        <div class="hero-copy">
+          <span class="eyebrow"
+            ><span class="status-dot"></span> CONECTA CON LO QUE SIGUE</span
+          >
+          <h1 id="hero-title">Tu próximo nivel<br />empieza aquí.</h1>
+          <p id="hero-text">
+            Equipa tus ideas con la tecnología que necesitas. Encuentra tu
+            próximo equipo, nosotros te ayudamos a elegir.
+          </p>
+          <a class="btn btn-primary" href="#catalog"
+            >Explorar productos <span>↗</span></a
+          >
+          <div class="hero-note">
+            <span>✓</span> Para trabajar. Para jugar. Para ti.
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="art-label">MÁS POTENCIA.<br />MÁS POSIBILIDADES.</div>
+          <img
+            src="assets/hero.svg"
+            alt="Laptop de diseño moderno con pantalla azul"
+            fetchpriority="high"
+          />
+          <div class="floating-chip">
+            <span>✦</span>
+            <div>
+              Haz que suceda<small>Tu siguiente gran idea empieza aquí</small>
+            </div>
+          </div>
+          <span class="art-bottom"
+            >TECNOLOGÍA QUE VA CONTIGO &nbsp; / &nbsp; 01</span
+          >
+        </div>
+      </section>
+      <section class="wrap benefits">
+        <div>
+          <span>▣</span>
+          <p>
+            <b>Envíos coordinados</b
+            ><small>A tu domicilio o recojo en tienda</small>
+          </p>
+        </div>
+        <div>
+          <span>◈</span>
+          <p>
+            <b>Paga como prefieras</b><small>Yape, Plin o transferencia</small>
+          </p>
+        </div>
+        <div>
+          <span>☏</span>
+          <p>
+            <b>Atención personalizada</b
+            ><small>Confirmamos tu pedido por WhatsApp</small>
+          </p>
+        </div>
+      </section>
+      <section class="wrap category-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ENCUENTRA LO TUYO</span>
+            <h2>Un equipo para cada idea.</h2>
+          </div>
+          <a href="#catalog">Ver todo el catálogo ↗</a>
+        </div>
+        <div id="categories" class="category-grid"></div>
+      </section>
+      <section class="catalog-section" id="catalog">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">ELIGE TU PRÓXIMO UPGRADE</span>
+              <h2 id="catalog-title">
+                Nuestros destacados<span class="blue-dot">.</span>
+              </h2>
+            </div>
+            <div class="tabs">
+              <button class="active" data-mode="featured">Destacados</button
+              ><button data-mode="all">Todos</button
+              ><button data-mode="offers">Ofertas</button>
+            </div>
+          </div>
+          <div class="catalog-layout">
+            <aside class="filters">
+              <div class="filter-title">
+                Filtrar productos <button id="reset-filters">Limpiar</button>
+              </div>
+              <label
+                >Categoría<select class="form-select" id="category-filter">
+                  <option value="">Todas las categorías</option>
+                </select></label
+              ><label
+                >Precio máximo<input
+                  id="price-filter"
+                  class="form-control"
+                  type="number"
+                  min="0"
+                  placeholder="Sin límite · S/" /></label
+              ><label class="check"
+                ><input type="checkbox" id="stock-filter" /> Solo
+                disponibles</label
+              >
+              <div class="help-card">
+                <span>¿No sabes cuál elegir?</span>
+                <p>
+                  Cuéntanos qué necesitas y te ayudamos a encontrar tu equipo.
+                </p>
+                <button id="help-button">Hablemos ↗</button>
+              </div>
+            </aside>
+            <div class="results">
+              <div class="results-bar">
+                <span id="results-count" aria-live="polite"
+                  >Cargando productos…</span
+                ><select
+                  id="sort"
+                  class="form-select"
+                  aria-label="Ordenar productos"
+                >
+                  <option value="featured">Recomendados</option>
+                  <option value="price-asc">Menor precio</option>
+                  <option value="price-desc">Mayor precio</option>
+                  <option value="name">Nombre A–Z</option>
+                </select>
+              </div>
+              <div id="products" class="product-grid"></div>
+              <div id="pagination" class="pagination-row"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap bottom-banner">
+        <div>
+          <span class="eyebrow">DE TU CARRITO A TUS MANOS</span>
+          <h2>Elige. Escríbenos. Estrena.</h2>
+          <p>Arma tu pedido y coordinamos los detalles contigo por WhatsApp.</p>
+        </div>
+        <button class="btn btn-dark" id="bottom-cart">Armar mi pedido ↗</button>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap footer-grid">
+        <div>
+          <a class="brand" href="./"
+            ><span class="brand-icon">n↗</span
+            ><span data-brand>NexoTech</span></a
+          >
+          <p id="store-description">Tecnología que va contigo.</p>
+          <small id="demo-label"></small>
+        </div>
+        <div>
+          <b>Estamos para ayudarte</b>
+          <p id="store-contact"></p>
+          <small id="store-hours"></small
+          ><a id="social-link" hidden target="_blank" rel="noopener"
+            >Nuestras redes ↗</a
+          >
+        </div>
+        <div>
+          <b>Elige cómo pagar</b>
+          <div class="payment-brands">
+            <span>yape</span><span>plin</span><span>Transferencia</span>
+          </div>
+          <small>Pagos verificados de forma manual.</small>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span
+          >© <span id="year"></span> <span data-brand>NexoTech</span> Perú</span
+        ><span>Hecho para tu próximo nivel.</span>
+      </div>
+    </footer>
+    <dialog id="detail-dialog" aria-label="Detalle del producto" class="dialog-wide">
+      <button class="close-dialog" aria-label="Cerrar">×</button>
+      <div id="detail-content"></div>
+    </dialog>
+    <dialog id="cart-dialog" aria-label="Mi carrito" class="cart-dialog">
+      <button class="close-dialog" aria-label="Cerrar">×</button
+      ><span class="eyebrow">TU PRÓXIMO UPGRADE</span>
+      <h2>Mi carrito</h2>
+      <div id="cart-content"></div>
+    </dialog>
+    <dialog id="checkout-dialog" aria-label="Datos y resumen del pedido" class="dialog-wide">
+      <button class="close-dialog" aria-label="Cerrar">×</button
+      ><span class="eyebrow">UN PASO MÁS</span>
+      <h2>Datos de tu pedido</h2>
+      <div id="checkout-content"></div>
+    </dialog>
+    <div id="notice" role="status" class="notice" hidden></div>
+    <script type="module" src="src/store.js"></script>
+  </body>
+</html>
